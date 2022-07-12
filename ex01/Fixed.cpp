@@ -73,27 +73,31 @@ bool Fixed::operator <(const Fixed& other)
 
 // operator arithmetic
 
-Fixed& Fixed::operator +(const Fixed& other)
+Fixed Fixed::operator+(const Fixed& other) const
 {
-	Fixed result(this->getRawBits() + other.getRawBits());
+	Fixed result;
+	result.setRawBits(this->getRawBits() + other.getRawBits());
 	return(result);
 }
 
-Fixed& Fixed::operator -(const Fixed& other)
+Fixed Fixed::operator-(const Fixed& other) const
 {
-	Fixed result(this->getRawBits() - other.getRawBits());
+	Fixed result;
+	result.setRawBits(this->getRawBits() - other.getRawBits());
 	return(result);
 }
 
-Fixed& Fixed::operator *(const Fixed& other)
+Fixed Fixed::operator*(const Fixed& other) const
 {
-	Fixed result(this->getRawBits() * other.getRawBits());
+	Fixed result;
+	result.setRawBits(this->getRawBits() * other.getRawBits());
 	return(result);
 }
 
-Fixed& Fixed::operator /(const Fixed& other)
+Fixed Fixed::operator/(const Fixed& other) const
 {
-	Fixed result(this->getRawBits() / other.getRawBits());
+	Fixed result;
+	result.setRawBits(this->getRawBits() / other.getRawBits());
 	return(result);
 }
 
@@ -101,27 +105,27 @@ Fixed& Fixed::operator /(const Fixed& other)
 
 Fixed& Fixed::operator ++()
 {
-	this->_value++;
+	this->setRawBits(this->getRawBits() + 1);
 	return (*this);
 }
 
 Fixed& Fixed::operator --()
 {
-	this->_value--;
+	this->setRawBits(this->getRawBits() - 1);
 	return (*this);
 }
 
-Fixed Fixed::operator ++(int other)
+Fixed Fixed::operator ++(int)
 {
 	Fixed old = *this;
-	operator++();
+	++(*this);
 	return (old);
 }
 
-Fixed Fixed::operator --(int other)
+Fixed Fixed::operator --(int)
 {
 	Fixed old = *this;
-	operator--();
+	--(*this);
 	return (old);
 }
 
