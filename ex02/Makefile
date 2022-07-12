@@ -1,4 +1,4 @@
-SRC = Fixed.cpp main.cpp
+SRC = main.cpp Fixed.cpp
 NAME = fixedtest
 CPPFLAGS = -Werror -Wextra -Wall -std=c++98
 OBJ=$(SRC:%.cpp=%.o)

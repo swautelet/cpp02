@@ -11,11 +11,35 @@ class Fixed{
 		Fixed(const float t);
 		~Fixed();
 		Fixed(const Fixed& p);
+
 		float toFloat(void) const;
 		int	toInt(void) const;
 		int getRawBits() const;
 		void setRawBits(int const raw);
+
 		Fixed& operator =(const Fixed& p);
+
+		bool operator >(const Fixed& other) const;
+		bool operator <(const Fixed& other) const;
+		bool operator ==(const Fixed& other) const;
+		bool operator !=(const Fixed& other) const;
+		bool operator >=(const Fixed& other) const;
+		bool operator <=(const Fixed& other) const;
+
+		Fixed operator +(const Fixed& other) const;
+		Fixed operator -(const Fixed& other) const;
+		Fixed operator *(const Fixed& other) const;
+		Fixed operator /(const Fixed& other) const;
+
+		Fixed& operator ++();
+		Fixed& operator --();
+		Fixed operator ++(int other);
+		Fixed operator --(int other);
+
+		static Fixed& min(Fixed& first, Fixed& second);
+		static const Fixed& min(const Fixed& first, const Fixed& second);
+		static Fixed& max(Fixed& first, Fixed& second);
+		static const Fixed& max(const Fixed& first, const Fixed& second);
 
 	private:
 		int	_value;
