@@ -15,12 +15,12 @@ Point::Point(const Point& p): _x(p._x), _y(p._y)
 	return ;
 }
 
-const Fixed& Point::getx()
+const Fixed& Point::getx() const
 {
 	return(this->_x);
 }
 
-const Fixed& Point::gety()
+const Fixed& Point::gety() const
 {
 	return(this->_y);
 }
