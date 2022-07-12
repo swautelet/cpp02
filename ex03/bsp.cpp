@@ -2,8 +2,11 @@
 
 static bool demi_plan(Point const a, Point const b, Point const c, Point const point)
 {
+	std::cout << "demi_plan start" << std::endl;
 	Fixed m((a.gety() - b.gety()) / (a.getx() - b.getx()));
+	std::cout << "m calulated successfully" << std::endl;
 	Fixed p(a.gety() - (m * a.getx()));
+	std::cout << "p calulated successfully" << std::endl;
 	if (((m * c.getx()) + p - c.gety() > 0 && (m * point.getx()) + p - point.gety() > 0)
 		|| ((m * c.getx()) + p - c.gety() < 0 && (m * point.getx()) + p - point.gety() < 0))
 		return (true);
