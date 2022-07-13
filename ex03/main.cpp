@@ -2,10 +2,10 @@
 
 int main()
 {
-	Point a(4, 10.1);
-	Point b(4.1, 6);
-	Point c(10, 6.1);
-	Point point(20, 20);
+	Point a(4, 10);
+	Point b(4, 6);
+	Point c(10, 6);
+	Point point(4.1, 6.1);
 
 	if (bsp(a, b, c, point))
 		std::cout << "point is in the triangle." << std::endl;

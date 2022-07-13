@@ -1,5 +1,5 @@
 SRC = Fixed.cpp Point.cpp bsp.cpp main.cpp
-NAME = fixedtest
+NAME = intriangle
 CPPFLAGS = -Werror -Wextra -Wall -std=c++98
 OBJ=$(SRC:%.cpp=%.o)
 

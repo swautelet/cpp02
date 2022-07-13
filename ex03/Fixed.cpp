@@ -85,14 +85,18 @@ Fixed Fixed::operator-(const Fixed& other) const
 Fixed Fixed::operator*(const Fixed& other) const
 {
 	Fixed result;
-	result.setRawBits(this->getRawBits() * other.getRawBits());
+	float temp;
+	temp = this->toFloat() * other.toFloat();
+	result.setRawBits(temp * (1 << Fixed::_nbit));
 	return(result);
 }
 
 Fixed Fixed::operator/(const Fixed& other) const
 {
 	Fixed result;
-	result.setRawBits(this->getRawBits() / other.getRawBits());
+	float temp;
+	temp = this->toFloat() / other.toFloat();
+	result.setRawBits(temp * (1 << Fixed::_nbit));
 	return(result);
 }
 
