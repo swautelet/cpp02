@@ -6,7 +6,7 @@ OBJ=$(SRC:%.cpp=%.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	g++ $(CPPFLAGS) $(SRC) -o $(NAME)
+	g++ $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 .o:.c
 	g++ -c $(CPPFLAGS) $? 
